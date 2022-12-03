@@ -1,14 +1,10 @@
--- set termguicolors
--- set background=dark
--- g:everforest_background = 'soft'
--- let g:everforest_better_performance = 1
--- colorscheme everforest
-
 vim.o.termguicolors = true
 vim.cmd[[colorscheme everforest]]
 vim.o.background = "dark"
 vim.g.everforest_background = "soft"
 vim.g.everforest_better_performance = 1
+--vim.g.coc_node_path='/home/user/.nvm/versions/node/v19.2.0/bin/node'
+--vim.g.coc_npm_path='/home/user/.nvm/versions/node/v19.2.0/bin/npm'
 
 local ensure_packer = function()
   local fn = vim.fn
@@ -26,9 +22,10 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'sainnhe/everforest'
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
+  use {'neoclide/coc.nvim', branch = 'release'}
+  use { 'quarto-dev/quarto-nvim',
+  requires = {'neovim/nvim-lspconfig'}
+}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

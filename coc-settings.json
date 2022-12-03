@@ -1,0 +1,11 @@
+{
+    "npm.binPath": "/home/user/.nvm/versions/node/v19.2.0/bin/npm",
+    "languageserver": {
+  "sql": {
+    "module": "/home/user/.nvm/versions/node/v19.2.0/bin/sql-language-server",
+    "args": ["up", "--method", "node-ipc"],
+    "filetypes": ["sql", "mysql"]
+  }
+}
+}
+
