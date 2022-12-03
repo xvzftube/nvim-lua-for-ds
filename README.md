@@ -7,6 +7,30 @@ The purpose of this tutorial is to make a neovim-lua configuration that works fo
 3. Be functional
 4. Use packages that greatly enhance the vim experience
 
+## What makes this "For Data Science"
+
+### Support for DS languages via Syntax Highlighting and Completion
+
+Data scientists mainly use one to all of the following: Python, R, SQL
+
+### Interactive programming
+
+An NVIM config for data science should have syntax highlighting for these languages at a minimum.
+Interactive coding. In standard coding practice we see the following flow
+
+1. Code
+2. Run complete file
+3. Repeat
+
+This flow is time consuming in a Data Science workflow for two reasons a) loading data slows the script b) training models slow script. For these reasons it is nice to not have to rerun the full script, but to run just parts of a script. There are many options for interactive development. Jupyter notebooks are the most used. I don't care for notebooks so I use other tools to code interactively.
+
+### Multiview
+
+Multiview = code + artifacts. An artifact can be a webpage, plot, table of data, etc.
+
+The code is just a means to an end. Like web developers Data Scientists look at output of code about as much as the code itself, if not more. The difference between data scientists and front end web dev is that we do not look at websites, but tables of data and plots. A data scientist's text editing experience is enhanced when multiview (code + artifacts) is supported.
+
+
 ## Part 1
 
 ### Install Neovim
