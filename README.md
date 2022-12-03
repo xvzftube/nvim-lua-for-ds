@@ -1,3 +1,5 @@
+# NVIM For Data Science
+
 The purpose of this tutorial is to make a neovim-lua configuration that works for data scientists. There are two features that I am going for
 
 1. Be relentlessly minimal: Minimalism is less likely to be break in the future and is easier to maintain. Some people make vim/neovim their IDE. While I think this is possible my motto is "vim is a text editor and Linux OS is the IDE". The editor should be just enough to get a lot of work done.
