@@ -35,13 +35,13 @@ At this point the nvim 0.8.* should be installed and should be able to evaluate 
 1. Look at help `:help everforest`
 2. Convert vim syntax to nvim-lua syntax guide
 
-|vim                                       | init.lua                                            |
-|==========================================|=====================================================|
-`set termguicolors`                        |`vim.o.termguicolors = true`
-`colorscheme everforest`                   |`vim.cmd[[colorscheme everforest]]`                  |
-`set background=dark`                      |`vim.o.background = "dark"`                          |
-`g:everforest_background = 'soft'`         |`vim.g.everforest_background = "soft"`               |
-`let g:everforest_better_performance = 1`  |`vim.g.everforest_better_performance = 1`            |
+| vim                                       | init.lua                                  |
+| ----------------------------------------- | ----------------------------------------- |
+| `set termguicolors`                       | `vim.o.termguicolors = true`              |
+| `colorscheme everforest`                  | `vim.cmd[[colorscheme everforest]]`       |
+| `set background=dark`                     | `vim.o.background = "dark"`               |
+| `g:everforest_background = 'soft'`        | `vim.g.everforest_background = "soft"`    |
+| `let g:everforest_better_performance = 1` | `vim.g.everforest_better_performance = 1` |
 
 To learn more look here https://github.com/nanotee/nvim-lua-guide
 
