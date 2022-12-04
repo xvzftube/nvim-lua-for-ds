@@ -3,6 +3,27 @@ vim.cmd[[colorscheme everforest]]
 vim.o.background = "dark"
 vim.g.everforest_background = "soft"
 vim.g.everforest_better_performance = 1
+
+vim.o.spelllang="en_us"
+vim.o.spellfile="~/.config/nvim/en.utf-8.add"
+
+-- vim-isort 
+vim.g.vim_isort_map = '<C-i>'
+-- General
+vim.o.number=true                           --set line numbers
+vim.api.nvim_command("set noswapfile")      -- no swap
+vim.o.clipboard="unnamedplus"               --Copy/paste between vim and other programs. '"+y' then middlemouse
+vim.o.expandtab=true                        --Use spaces instead of tabs.
+vim.o.smarttab=true                         --Uses shiftwidth and tabstap to insert blanks when <Tab>
+vim.o.shiftwidth=2                          --One tab == four spaces.
+vim.o.tabstop=2                             --One tab == four spaces.<Paste>
+
+--" remap
+--:imap ii <Esc>
+--" python alias (,p runs python on script. ,t times python script)
+--nmap ,p :w<CR>:!python3 %<CR>
+--nmap ,t :w<CR>:!time python3 %<CR>
+
 --vim.g.coc_node_path='/home/user/.nvm/versions/node/v19.2.0/bin/node'
 --vim.g.coc_npm_path='/home/user/.nvm/versions/node/v19.2.0/bin/npm'
 --
@@ -123,6 +144,14 @@ require('hop').setup(
   hint_position = require'hop.hint'.HintPosition.MIDDLE,
 })
 -- hop
+--
+-- nvim tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.keymap.set('n','nf', ":NvimTreeFocus<CR>")
+vim.keymap.set('n','nn', ":NvimTreeToggle<CR>")
+require("nvim-tree").setup()
+-- end ncim tree
 
 vim.keymap.set('n', '<space>rs', '<cmd>IronRepl<cr>')
 vim.keymap.set('n', '<space>rr', '<cmd>IronRestart<cr>')
@@ -158,6 +187,13 @@ return require('packer').startup(function(use)
     -- you can configure Hop the way you like here; see :h hop-config
     require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
   end
+}
+  use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', -- optional, for file icons
+  },
+  tag = 'nightly' -- optional, updated every week. (see issue #1193)
 }
 
 

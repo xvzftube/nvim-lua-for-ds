@@ -37,12 +37,16 @@ vim gutter
 easymotions
 comfortable motions
 buffer word completion
-
 path completion
 linting
+side bar navigation
+
+
+
+
+fixer
 python library sorting
 spelling correction
-side bar navigation
 
 
 1. Better naviation comfotable motion
