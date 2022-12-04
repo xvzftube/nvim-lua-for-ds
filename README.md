@@ -37,6 +37,7 @@ vim gutter
 easymotions
 comfortable motions
 buffer word completion
+
 path completion
 linting
 python library sorting

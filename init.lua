@@ -102,6 +102,27 @@ require('neoscroll').setup({
     performance_mode = false,    -- Disable "Performance Mode" on all buffers.
 })
 -- end neoscrool
+-- gitsigns
+require('gitsigns').setup()
+-- end gitsigns
+-- hop
+-- https://github.com/phaazon/hop.nvim/wiki/Commands
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('', 'f', function()
+  hop.hint_words({ direction = directions.AFTER_CURSOR, current_line_only = false})
+end, {remap=true})
+vim.keymap.set('', 'F', function()
+  hop.hint_words({ direction = directions.BEFORE_CURSOR, current_line_only = false})
+end, {remap=true})
+vim.keymap.set('', 'L', function()
+  hop.hint_lines({ current_line_only = false})
+end, {remap=true})
+require('hop').setup(
+{
+  hint_position = require'hop.hint'.HintPosition.MIDDLE,
+})
+-- hop
 
 vim.keymap.set('n', '<space>rs', '<cmd>IronRepl<cr>')
 vim.keymap.set('n', '<space>rr', '<cmd>IronRestart<cr>')
@@ -129,6 +150,15 @@ return require('packer').startup(function(use)
   use {'hkupty/iron.nvim'}
   use {'nvim-lualine/lualine.nvim',requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
   use 'karb94/neoscroll.nvim'
+  use {'lewis6991/gitsigns.nvim'}
+  use {
+  'phaazon/hop.nvim',
+  branch = 'v2', -- optional but strongly recommended
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+  end
+}
 
 
   -- Automatically set up your configuration after cloning packer.nvim
